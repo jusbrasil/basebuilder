@@ -16,5 +16,5 @@ sudo apt-get update && \
 
 sudo mkdir /opt/spark && \
     curl http://www.us.apache.org/dist/spark/spark-1.4.0/spark-1.4.0-bin-hadoop2.4.tgz \
-    | tar -xzC /opt
+    | tar -xzC /opt/spark --strip 1
 

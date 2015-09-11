@@ -2,9 +2,9 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-# this file describes how to build tsuru java image
+# this file describes how to build tsuru spark image
 # to run it:
-# 1- run: $ tsuru-admin platform-add java -d https://raw.github.com/tsuru/basebuilder/master/java/Dockerfile
+# 1- run: $ tsuru-admin platform-add spark -d https://raw.github.com/jusbrasil/basebuilder/master/spark/Dockerfile
 
 from	ubuntu:14.04
 run     locale-gen en_US.UTF-8
@@ -18,6 +18,6 @@ run	rm basebuilder.tar.gz
 run	cp /var/lib/tsuru/java/deploy /var/lib/tsuru
 run	cp /var/lib/tsuru/java/start /var/lib/tsuru
 run	/var/lib/tsuru/java/install
-run     /var/lib/tsuru/spark/install 
-env     SPARK_HOME /opt/spark
-env     MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
+run /var/lib/tsuru/spark/install 
+env SPARK_HOME /opt/spark
+env MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
